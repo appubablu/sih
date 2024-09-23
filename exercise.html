@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="excersise.css">
+    <title>Click for Demo Video</title>
+    <style>
+        .youtube-button {
+            padding: 12px 24px;
+            background-color: #FF0000; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .youtube-button:hover {
+            background-color: #CC0000;
+        }
+
+        .youtube-button img {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button with YouTube Icon -->
+    <button class="youtube-button" onclick="openYouTubeVideo()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/YouTube_icon_%282013-2017%29.svg/1024px-YouTube_icon_%282013-2017%29.svg.png" alt="YouTube Icon">
+        DEMO Video
+    </button>
+
+    <!-- JavaScript Function -->
+    <script>
+        function openYouTubeVideo() {
+            const videoURL = 'https://youtu.be/8BcPHWGQO44?si=Qf5NZ1Ki3XmiKTCg';
+            window.open(videoURL, '_blank');
+        }
+    </script>
+
+    <div class="container">
+        <h1 style="color: black;">BASIC STRETCHING EXERCISE</h1>
+        <section class="header">
+            <ul>
+                <li>HAMSTRING STRETCHING</li>
+                <img src="bs.jpg" alt="Hamstring Stretching" width="200" />
+                <li>SHOULDER STRETCHING</li>
+                <img src="sh.jpg" width="200"/>
+                <li>CALF STRETCHING</li>
+                <img src="cs.jpg" width="200"/>
+            </ul>
+
+            <h1>GENTLE BALANCE EXERCISE</h1>
+            <ul>
+                <li>HEEL-TO-TOE WALK</li>
+                <img src="heel.jpg" width="200"/>
+                <li>SINGLE LEG STAND</li>
+                <img src="sls.jpg" width="200"/>
+                <li>ROCK THE BOAT</li>
+                <img src="rock.jpg" width="200"/>
+            </ul>
+
+            <h1>INTERMEDIATE STRENGTH EXERCISE</h1>
+            <ul>
+                <li>CHAIR SQUATS</li>
+                <img src="chair.jpg" width="200"/>
+                <li>WALL PUSH UP</li>
+                <img src="wall.jpg" width="200"/>
+            </ul>
+
+            <h1>BALANCED DRILLS</h1>
+            <ul>
+                <li>TANDEM STANCE</li>
+                <img src="tandem.jpg" width="200"/>
+                <li>FIGURE 8 WALKING</li>
+                <img src="fig8.jpg" width="200"/>
+                <li>WEIGHT SHIFT</li>
+                <img src="weight shift.jpg" width="200"/>
+            </ul>
+
+            <h1>ADVANCED STABILITY EXERCISE</h1>
+            <ul>
+                <li>BALANCE ON FOAM PAD</li>
+                <img src="balancefoam.jpg" width="200"/>
+                <li>SINGLE LEG SQUATS</li>
+                <img src="singlelegsquat.jpg" width="200"/>
+                <li>PLANK WITH LEG LIFT</li>
+                <img src="plank leg lift.jpg" width="200"/>
+            </ul>
+
+            <h1>CORE STRENGTHENING</h1>
+            <ul>
+                <li>PLANK</li>
+                <img src="plank.jpg" width="200"/>
+                <li>BRIDGE</li>
+                <img src="bridge.jpg" width="200"/>
+                <li>SEATED KNEE LIFTS</li>
+                <img src="seated.jpg" width="200"/>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

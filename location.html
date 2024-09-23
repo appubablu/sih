@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <style>
+    
+    #map {
+      height: 500px;
+      width: 100%;
+      display: none; 
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Add your button -->
+  <button id="showMapButton">Maps</button>
+
+  <!-- Add a container for the map -->
+  <div id="map"></div>
+
+  <!-- Your existing website content -->
+  <!-- Add your other content here -->
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    
+    var initialLatitude = 12.989815;
+    var initialLongitude = 79.971420;
+    var map = L.map('map').setView([initialLatitude, initialLongitude], 15); 
+
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    
+    var marker = L.marker([initialLatitude, initialLongitude]).addTo(map);
+
+    
+    var firebaseUrl = "https://fall-detection-ff609-default-rtdb.firebaseio.com"; 
+    
+    function updateLocation() {
+      fetch(firebaseUrl)
+        .then(response => response.json())
+        .then(data => {
+          var position = [data.latitude, data.longitude];
+          map.setView(position, 15); 
+          marker.setLatLng(position); 
+          marker.bindPopup("Latitude: " + data.latitude + "<br>Longitude: " + data.longitude)
+                .openPopup();
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
+    
+    setInterval(updateLocation, 5000);
+
+    
+    document.getElementById('showMapButton').addEventListener('click', function() {
+      document.getElementById('map').style.display = 'block'; 
+      map.invalidateSize(); 
+      updateLocation(); 
+    });
+  </script>
+
+</body>
+</html>

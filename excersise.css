@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background: 
+        radial-gradient(circle at center, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), /* Radial gradient overlay */
+        url(bg.jpg), /* Background image */
+        url('pattern.png'); /* Subtle pattern */
+    background-position: center, center, center;
+    background-size: cover, cover, auto;
+    background-blend-mode: overlay; /* Blend pattern with the background image */
+    background-attachment: fixed; /* Parallax effect */
+    animation: gradientAnimation 15s ease infinite; /* Animated gradient */
+    padding: 40px;
+    position: relative;
+}
+
+/* Keyframes for animated gradient background */
+@keyframes gradientAnimation {
+    0% { background-color: #ff6e7f; }
+    50% { background-color: #bfe9ff; }
+    100% { background-color: #ff6e7f; }
+}
+
+ul {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    color: white;
+    font-size: 20px; /* Adjust font size */
+    margin: 10px 0; /* Space between items */
+}
+
+img {
+    display: block;
+    margin: 10px auto; /* Center images and add spacing */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+h1 {
+    color: white;
+    font-size: 32px; /* Adjust font size */
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.youtube-button {
+    padding: 12px 24px;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    margin: 20px 0; /* Space around the button */
+}
+
+.youtube-button:hover {
+    background-color: #CC0000;
+}
+
+.youtube-button img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
